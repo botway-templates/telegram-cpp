@@ -14,3 +14,6 @@ cmake .
 make -j
 make install
 cd ..
+
+Remove-Item -Path .\tgbot-cpp -Recurse -Force
+Remove-Item -Path .\json -Recurse -Force

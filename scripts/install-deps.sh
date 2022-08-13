@@ -14,3 +14,5 @@ cmake .
 make -j
 sudo make install
 cd ..
+
+rm -rf tgbot-cpp json
