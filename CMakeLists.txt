@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(bwbot)
+
+set(BOT_NAME "{{.BotName}}")
+
+project(${BOT_NAME})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 set(Boost_USE_MULTITHREADED ON)
@@ -17,6 +20,6 @@ if (CURL_FOUND)
     add_definitions(-DHAVE_CURL)
 endif()
 
-add_executable(bwbot src/main.cpp)
+add_executable(${BOT_NAME} src/main.cpp)
 
-target_link_libraries(bwbot /usr/local/lib/libTgBot.a ${CMAKE_THREAD_LIBS_INIT} ${OPENSSL_LIBRARIES} ${Boost_LIBRARIES} ${CURL_LIBRARIES} nlohmann_json::nlohmann_json)
+target_link_libraries(${BOT_NAME} /usr/local/lib/libTgBot.a ${CMAKE_THREAD_LIBS_INIT} ${OPENSSL_LIBRARIES} ${Boost_LIBRARIES} ${CURL_LIBRARIES} nlohmann_json::nlohmann_json)
